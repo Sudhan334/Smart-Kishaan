@@ -26,6 +26,7 @@ const CropCurePage = () => {
             })
             setPredict(response.data.result);
             
+            
             toast.success(response.data.message)
         } catch (except) {
             console.log(except)
@@ -51,7 +52,7 @@ const CropCurePage = () => {
             </> : <>
             {
                 predict ? <>
-                        <div className="text-center text-danger">
+                        <div className="text-center text-danger ">
                             <h6>
                                 <HTMLRenderer htmlString={predict} />
 

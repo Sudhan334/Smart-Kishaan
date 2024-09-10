@@ -6,8 +6,8 @@ const HomePage = () => {
     <>
       <HomePageBanner />
 
-      <div className="container px-4 py-5" id="hanging-icons">
-        <h2 className="pb-2 border-bottom text-white">Our Services</h2>
+      <div className="container px-4 py-5" style={{ marginTop: "11rem" }} id="hanging-icons">
+        {/* <h2 className="pb-2 border-bottom text-white">Our Services</h2> */}
        
         <div className="container">
           <div className="row g-3 py-5">

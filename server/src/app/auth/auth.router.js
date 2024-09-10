@@ -13,6 +13,9 @@ const dirSetup = (req, res, next)=>{
 }
 
 //apis
+router.get('/', (req, res) => {
+    res.send("I am auth");
+  });
 router.post('/register', dirSetup, uploader.single('image'), validateRequest(registerSchema), authCtrl.register);
 router.get('/verify-token/:token', authCtrl.verifyToken);
 router.post('/set-password/:token', validateRequest(passwordSchema), authCtrl.setPassword);

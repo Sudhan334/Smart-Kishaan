@@ -10,10 +10,34 @@ import { ButtonComponent } from "../button/button.component"
 
 const CropCureForm = ({submitHandler, loading=false})=>{
     const cropSchema = Yup.object({
-        nitrogen: Yup.number().min(0).max(200).required(),
-        phosphorous: Yup.number().min(0).max(200).required(),
-        potassium: Yup.number().min(0).max(300).required(),
-        cropname: Yup.string(),
+      
+       nitrogen: Yup.number()
+       .required('Nitrogen value is required')
+    .typeError('Nitrogen must be a number') 
+    .min(0, 'Nitrogen value must be at least 0')
+    .max(200, 'Nitrogen value must be at most 200')
+    , 
+
+  phosphorous: Yup.number()
+    .typeError('Phosphorous must be a number')
+    .min(0, 'Phosphorous value must be at least 0')
+    .max(200, 'Phosphorous value must be at most 200')
+    .required('Phosphorous value is required')
+    .nullable(false),
+
+  potassium: Yup.number()
+    .typeError('Potassium must be a number')
+    .min(0, 'Potassium value must be at least 0')
+    .max(300, 'Potassium value must be at most 300')
+    .required('Potassium value is required')
+    .nullable(false),
+
+  cropname: Yup.string()
+    .required('Crop name is required')
+    .typeError('Nitrogen must be a number') 
+    .trim('Crop name cannot include leading or trailing spaces')
+    .min(2, 'Crop name must be at least 2 characters')
+    .max(50, 'Crop name must be at most 50 characters'),
     })
 
     const {register, handleSubmit, formState: {errors}} =useForm({
@@ -40,7 +64,7 @@ const CropCureForm = ({submitHandler, loading=false})=>{
                                 Crop
                             </Form.Label>
                             <Col sm={9}>
-                                <Form.Control type="text" placeholder="Enter nitrogen content of soil" {...register("cropname", {required: true, disabled: loading})} />
+                                <Form.Control type="text" placeholder="Enter cropname" {...register("cropname", {required: true, disabled: loading})} />
                                 <span className="text-danger">
                                     <em>{errors?.cropname?.message}</em>
                                 </span>                            </Col>
@@ -50,7 +74,7 @@ const CropCureForm = ({submitHandler, loading=false})=>{
                                 Nitrogen
                             </Form.Label>
                             <Col sm={9}>
-                                <Form.Control type="number" placeholder="Enter nitrogen content of soil" {...register("nitrogen", {required: true, disabled: loading})} />
+                                <Form.Control type="number" placeholder="Enter nitrogen content of soil" {...register("nitrogen", {required: true})} />
                                 <span className="text-danger">
                                     <em>{errors?.nitrogen?.message}</em>
                                 </span>                            </Col>

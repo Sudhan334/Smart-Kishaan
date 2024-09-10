@@ -5,6 +5,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import authSvc from "../auth.service";
 import { NavLink } from "react-router-dom";
+import userSvc from "../../../cms/user/user.service"
 
 const ForgetPassword = () =>{
     const [data, setData] =  useState()
@@ -17,9 +18,11 @@ const ForgetPassword = () =>{
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
         try{
+            let response = await userSvc.changePassword(data);
+            
             toast.error("Check email for resetting the password", {
                 theme: "light"
             })

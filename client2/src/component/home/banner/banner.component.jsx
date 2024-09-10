@@ -61,7 +61,7 @@ const HomePageBanner = ()=>{
         </Container> */}
         <Container>
     <Row>
-        <Col sm={12} md={20}>
+        <Col sm={12} md={12}>
             <div className="slider-background">
                 <Slider {...settings}>
                     {banner && banner.map((row, ind) => (
@@ -82,10 +82,7 @@ const HomePageBanner = ()=>{
             </div>
         </Col>
     </Row>
-    {/* Add other content here */}
-    <div className="content">
-        {/* Your other content goes here */}
-    </div>
+    
 </Container>
     </>)
 }
