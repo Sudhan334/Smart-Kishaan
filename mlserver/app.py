@@ -83,7 +83,7 @@ def crop_prediction():
             # Determine result
             if prediction[0] in crop_dict:
                 crop = crop_dict[prediction[0]]
-                result = "{} is the best crop to be cultivated".format(crop)
+                result = "{}".format(crop)
             else:
                 result = "Sorry, we could not find any suitable crop for this environment."
 

@@ -77,6 +77,7 @@ class SeedService extends HttpService {
             let result = await this.getRequest(
                 '/v1/seed/'+slug+"/slug"
                 );
+                console.log()
             return result;
         }
         catch(except){

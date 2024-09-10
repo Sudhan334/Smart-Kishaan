@@ -72,17 +72,13 @@ const LoginPage = (props)=>{
                             <span className="text-danger"><em>{ errors?.password?.message}</em></span>
                         </Col>
                     </FormGroup>
-                    {/* <FormGroup>
-                        <Col sm={{offset:3, span: 9}} className="mb-3"> 
-                            Or &nbsp; <NavLink to="/forget-password">Forget password? </NavLink>
-                        </Col>
-                    </FormGroup> */}
+                    
                     <FormGroup className="row mb-3">
                         <Col sm={{offset:3, span: 9}}>
                             <ButtonComponent label="Submit" className="btn-success me-3" type="submit"/>
                             <ButtonComponent label="Reset" className="btn-danger me-3" type="reset"/>
                         </Col>
-                        <NavLink to="/forget-password">Forgot Password?</NavLink>
+                      
                     </FormGroup>
                     <FormGroup>
                         <Col>

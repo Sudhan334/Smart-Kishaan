@@ -52,9 +52,11 @@ const CropRecommendationPage = () => {
                 }
             })
             setPredict(response.data.result);
+           console.log(response.data)
+
             let res = await seedSvc.getSeedBySlug((response.data.result).toLowerCase() + "-seed");
             setSeed(res.result);
-           
+
 
             toast.success(response.data.message)
         } catch (exception) {

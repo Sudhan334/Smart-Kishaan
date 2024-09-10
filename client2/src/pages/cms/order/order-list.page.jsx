@@ -46,6 +46,7 @@ const OrderList = () => {
     listOrders()
   }, [])
 
+  console.log(data)
   return (<>
     <Container fluid className="px-4">
       <Heading type={"h1"} className="mt-4" value={"Order List"}></Heading>
@@ -78,15 +79,16 @@ const OrderList = () => {
                   </td>
                 </tr>) : (
 
-                  data && data.length > 0 ? <>
+                  data? <>
                     {
-                      data.map((row, ind) => (
-                        <tr key={ind}>
+                      data?.map((row, ind) => {
+                        console.log(row)
+                        return   <tr key={ind}>
                           <td>{row.detail.title}</td>
                           <td>{row.qty}</td>
-                          <td>Name: {row.buyerId.name} <br/>
-                          Contact: {row.buyerId.email}<br/>
-                          Delivery at: {row.orderId.deliveryAddress}</td>
+                          <td>Name: {row.buyerId?.name} <br/>
+                          Contact: {row.buyerId?.email}<br/>
+                          Delivery at: {row.orderId?.deliveryAddress}</td>
                           <td><Badge bg={`${row.payment === 'paid' ? 'success' : 'warning'}`}>
                               {row.payment}
                             </Badge></td>
@@ -121,8 +123,10 @@ const OrderList = () => {
                               </>
                             }
                           </td>
-                        </tr>
-                      ))
+                        </tr> 
+                      }
+                       
+                      )
                     }
                   </> : <tr>
                     <td colSpan={5} className="text-center">
