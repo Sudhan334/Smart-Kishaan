@@ -74,3 +74,4 @@ export const MultipleImageUploader = ({loading=false,setThumb, setValue, setErro
         />            
     </>)
 }
+

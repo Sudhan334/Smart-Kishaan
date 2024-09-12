@@ -44,3 +44,4 @@ export const TableActionButtons = ({editUrl, deleteAction, id}) => {
     
     </>)    
 }
+
