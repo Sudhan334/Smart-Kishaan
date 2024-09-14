@@ -38,9 +38,9 @@ export const Routing = ()=>{
                         <Route path="/farmer-market" element={<landing.FarmerMarketPage/>}/>
                         <Route path="/register" element={<RegistrationPage/>}/>
                         <Route path="/login" element={<LoginPage/>}/>
-                        <Route path="/verify-token/:token" element={<SetPasswordPage/>}/>
-                        <Route path="/forget-password" element={<ForgetPassword/>}/>
+                        {/* <Route path="/forget-password" element={<ForgetPassword/>}/> */}
                     </Route>
+                    <Route path="/verify-token/:token" element={<SetPasswordPage/>}/>
 
                     {/* admin authorization need */}
                     <Route path="/admin" element={<PermissionCheck accessBy={"admin"} Component={<layouts.CMSLayout />}>Content</PermissionCheck>}>
