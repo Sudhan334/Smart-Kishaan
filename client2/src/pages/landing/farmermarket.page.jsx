@@ -138,7 +138,7 @@ const FarmerMarketPage = () => {
                         </div> : (
                             data && data.length ? <>
                                 <Form className="text-center" onSubmit={handleSubmit(handleSearch)}>
-                                    <Form.Control type="Search" size="sm" placeholder="search.." {...register("search")} />
+                                    <Form.Control type="Search" size="sm" placeholder="Search.." {...register("search")} />
                                     <Button className="btn btn-sm btn-success mt-2" type="submit">Search <i className="fa fa-search" /></Button>
                                 </Form>
                                 {
